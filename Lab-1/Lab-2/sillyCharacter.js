@@ -41,11 +41,19 @@ let favoriteFood = "pizza";
 
 
 // Function to generate a random character description
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function generateRandomCharacter() {
+  age = randomInt(5, 95);
+}
 
 // Functions to update character's age
 
-
+function changeAge(a) {
+  age = Math.max(1, age + a);
+}
 
 
 // Function to update the character's description after changing age
