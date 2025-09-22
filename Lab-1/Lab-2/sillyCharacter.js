@@ -65,3 +65,17 @@ function funnyDescription() {
 }
 // Add event listeners for buttons using querySelector
 
+document.querySelector("#generateButton").addEventListener("click", generateRandomCharacter);
+document.querySelector("#increaseAgeButton").addEventListener("click", () => changeAge(1));
+document.querySelector("#decreaseAgeButton").addEventListener("click", () => changeAge(-1));
+
+document.querySelector("#nameInput").addEventListener("input", e => {
+  characterName = e.target.value || "Mystery Hero";
+});
+
+document.querySelector("#ageInput").addEventListener("input", e => {
+  const newAge = parseInt(e.target.value);
+  if (!isNaN(newAge)) {
+    age = newAge;
+  }
+});
