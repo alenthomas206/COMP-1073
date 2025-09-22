@@ -47,12 +47,14 @@ function randomInt(min, max) {
 
 function generateRandomCharacter() {
   age = randomInt(5, 95);
+  updateUI();
 }
 
 // Functions to update character's age
 
 function changeAge(a) {
   age = Math.max(1, age + a);
+  updateUI();
 }
 
 
@@ -71,11 +73,22 @@ document.querySelector("#decreaseAgeButton").addEventListener("click", () => cha
 
 document.querySelector("#nameInput").addEventListener("input", e => {
   characterName = e.target.value || "Mystery Hero";
+  updateUI();
 });
 
 document.querySelector("#ageInput").addEventListener("input", e => {
   const newAge = parseInt(e.target.value);
   if (!isNaN(newAge)) {
     age = newAge;
+    updateUI();
   }
 });
+
+function updateUI() {
+  document.querySelector("#nameInput").value = characterName;
+  document.querySelector("#ageInput").value = age;
+  document.querySelector("#characterDescription").textContent = funnyDescription();
+}
+
+
+updateUI();
