@@ -33,6 +33,11 @@ display the character's attributes in a creative and humorous way.
 */
 
 // Declare and initialize variables
+let characterName = "Thor"; 
+let age = 42;                          
+let isSuperhero = true;              
+let specialPowers = ["lightning", "super strength", "flight"]; 
+let favoriteFood = "pizza";
 
 
 // Function to generate a random character description
