@@ -58,6 +58,10 @@ function changeAge(a) {
 
 // Function to update the character's description after changing age
 
-
+function funnyDescription() {
+  const heroText = isSuperhero ? "superhero" : "ordinary person";
+  const powersText = specialPowers.join(", ");
+  return `Meet ${characterName}, a ${age}-year-old ${heroText} who loves ${favoriteFood} and has powers like ${powersText}!`;
+}
 // Add event listeners for buttons using querySelector
 
