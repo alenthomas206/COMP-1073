@@ -8,22 +8,35 @@ var selections = { who: "", what: "", adjective: "", animal: "", place: "" };
 
 function cycleChoice(arr, key, displayId) {
   var current = selections[key];
-  var index = arr.indexOf(current);
-  if (index === -1 || index === arr.length - 1) {
-    selections[key] = arr[0];
-  } else {
-    selections[key] = arr[index + 1];
+  var nextIndex = 0;
+  var i;
+
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] === current) {
+      nextIndex = (i + 1) % arr.length;
+      break;
+    }
   }
+
+  selections[key] = arr[nextIndex];
   document.getElementById(displayId).textContent = selections[key];
 }
 
 function makeStory() {
-  if (selections.who && selections.what && selections.adjective && selections.animal && selections.place) {
-    var story = selections.who + " " + selections.what + " " + selections.adjective + " " + selections.animal + " " + selections.place + ".";
-    document.getElementById("storyOutput").textContent = story;
-  } else {
+  if (
+    selections.who === "" ||
+    selections.what === "" ||
+    selections.adjective === "" ||
+    selections.animal === "" ||
+    selections.place === ""
+  ) {
     document.getElementById("storyOutput").textContent = "Please make all selections first!";
+    return;
   }
+
+  var story = selections.who + " " + selections.what + " " + selections.adjective + " " +
+               selections.animal + " " + selections.place + ".";
+  document.getElementById("storyOutput").textContent = story;
 }
 
 function randomStory() {
@@ -52,11 +65,11 @@ function resetAll() {
   document.getElementById("storyOutput").textContent = "";
 }
 
-document.getElementById("whoBtn").onclick = function () { cycleChoice(who, "who", "whoText"); };
-document.getElementById("whatBtn").onclick = function () { cycleChoice(what, "what", "whatText"); };
-document.getElementById("adjBtn").onclick = function () { cycleChoice(adjective, "adjective", "adjText"); };
-document.getElementById("animalBtn").onclick = function () { cycleChoice(animal, "animal", "animalText"); };
-document.getElementById("placeBtn").onclick = function () { cycleChoice(place, "place", "placeText"); };
+document.getElementById("whoBtn").onclick = function() { cycleChoice(who, "who", "whoText"); };
+document.getElementById("whatBtn").onclick = function() { cycleChoice(what, "what", "whatText"); };
+document.getElementById("adjBtn").onclick = function() { cycleChoice(adjective, "adjective", "adjText"); };
+document.getElementById("animalBtn").onclick = function() { cycleChoice(animal, "animal", "animalText"); };
+document.getElementById("placeBtn").onclick = function() { cycleChoice(place, "place", "placeText"); };
 
 document.getElementById("makeBtn").onclick = makeStory;
 document.getElementById("randomBtn").onclick = randomStory;
