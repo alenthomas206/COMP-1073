@@ -1,3 +1,6 @@
+
+
+
 //references to sliders and the HTML element
 const redSlider = document.getElementById('red');
 const greenSlider = document.getElementById('green');
@@ -13,6 +16,10 @@ function updateBackgroundColour() {
 }
 
 // Call the function whenever any slider value changes
-redSlider.addEventListener('input', updateBackgroundColor);
-greenSlider.addEventListener('input', updateBackgroundColor);
-blueSlider.addEventListener('input', updateBackgroundColor);
+redSlider.addEventListener('input', updateBackgroundColour);
+greenSlider.addEventListener('input', updateBackgroundColour);
+blueSlider.addEventListener('input', updateBackgroundColour);
+
+
+
+updateBackgroundColour();
