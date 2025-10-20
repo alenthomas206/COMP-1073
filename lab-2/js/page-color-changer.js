@@ -11,3 +11,8 @@ function updateBackgroundColour() {
     const b = blueSlider.value;
     page.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
+
+// Call the function whenever any slider value changes
+redSlider.addEventListener('input', updateBackgroundColor);
+greenSlider.addEventListener('input', updateBackgroundColor);
+blueSlider.addEventListener('input', updateBackgroundColor);
