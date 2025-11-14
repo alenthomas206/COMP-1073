@@ -6,7 +6,7 @@ function calculatePrice(size, ingredientCount) {
         Large: 7
     };
 
-    return sizePrices[size] + ingredientCount * 1.5; //set price based on size and ingredients
+    return (sizePrices[size] + ingredientCount * 1.5).toFixed(2);; //set price based on size and ingredients
 }
 
 
@@ -18,14 +18,18 @@ document.getElementById("orderBtn").addEventListener("click", () => {
         .map(item => item.value);// Capture selected ingredients
     const sweetener = document.getElementById("sweetener").value;// Capture sweetener value
 
-    const rawOrder = {
+    const ingredientCount = ingredients.length;
+    const finalPrice = calculatePrice(size, ingredientCount);
+    
+    const Order = {
         base: base,
         size: size,
         ingredients: selectedIngredients,
-        sweetener: sweetener
+        sweetener: sweetener,
+        price: finalPrice
     };
 
-    console.log("Collected order details:", rawOrder);
+    console.log("Collected order details:", Order);
 });
 
 
