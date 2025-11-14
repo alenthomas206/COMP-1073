@@ -1,4 +1,16 @@
 
+function calculatePrice(size, ingredientCount) {
+    const sizePrices = {
+        Small: 3,
+        Medium: 5,
+        Large: 7
+    };
+
+    return sizePrices[size] + ingredientCount * 1.5; //set price based on size and ingredients
+}
+
+
+
 document.getElementById("orderBtn").addEventListener("click", () => {
     const base = document.getElementById("base").value;// Capture base value 
     const size = document.getElementById("size").value;// Capture size value 
