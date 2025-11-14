@@ -30,6 +30,17 @@ document.getElementById("orderBtn").addEventListener("click", () => {
     };
 
     console.log("Collected order details:", Order);
+
+    const output = document.getElementById("output");
+
+    output.innerHTML = `
+        <h2>Your Smoothie Order</h2>
+        <p><strong>Base:</strong> ${base}</p>
+        <p><strong>Size:</strong> ${size}</p>
+        <p><strong>Ingredients:</strong> ${ingredients.join(", ") || "None"}</p>
+        <p><strong>Sweetener:</strong> ${sweetener}</p>
+        <p><strong>Total Price:</strong> $${finalPrice}</p>
+    `;
 });
 
 
