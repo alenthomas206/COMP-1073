@@ -6,6 +6,38 @@
     <title>Smoothie Machine</title>
 </head>
 <body>
-    
+    <h1>Smoothie Machine</h1>
+    <form id="smoothieForm">
+
+        <label>
+            Choose Base:
+            <select id="base">
+                <option value="Milk">Milk</option>
+                <option value="Almond Milk">Almond Milk</option>
+                <option value="Yogurt">Yogurt</option>
+            </select>
+        </label>
+
+        <label>
+            Size:
+            <select id="size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+        </label>
+
+        <label>Ingredients:</label>
+        <div class="ingredients">
+            <label><input type="checkbox" value="Banana"> Banana</label>
+            <label><input type="checkbox" value="Strawberry"> Strawberry</label>
+            <label><input type="checkbox" value="Mango"> Mango</label>
+        </div>
+
+        <button type="button" id="orderBtn">Order Smoothie</button>
+    </form>
+
+    <!-- Output -->
+    <div id="output"></div>  
 </body>
 </html>
