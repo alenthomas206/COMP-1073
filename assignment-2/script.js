@@ -42,5 +42,19 @@ document.getElementById("orderBtn").addEventListener("click", () => {
         <p><strong>Total Price:</strong> $${finalPrice}</p>
     `;
 });
+document.getElementById("resetBtn").addEventListener("click", () => {
 
+    // Reset dropdowns
+    document.getElementById("base").selectedIndex = 0;
+    document.getElementById("size").selectedIndex = 0;
+    document.getElementById("sweetener").selectedIndex = 0;
+
+    // Uncheck all checkboxes
+    document.querySelectorAll(".ingredients input").forEach(cb => cb.checked = false);
+
+    // Clear output
+    document.getElementById("output").innerHTML = "";
+
+    console.log("Form reset successfully");
+});
 
