@@ -18,7 +18,7 @@ document.getElementById("orderBtn").addEventListener("click", () => {
         .map(item => item.value);// Capture selected ingredients
     const sweetener = document.getElementById("sweetener").value;// Capture sweetener value
 
-    const ingredientCount = ingredients.length;
+    const ingredientCount = selectedIngredients.length;
     const finalPrice = calculatePrice(size, ingredientCount);
     
     const Order = {
@@ -37,10 +37,10 @@ document.getElementById("orderBtn").addEventListener("click", () => {
         <h2>Your Smoothie Order</h2>
         <p><strong>Base:</strong> ${base}</p>
         <p><strong>Size:</strong> ${size}</p>
-        <p><strong>Ingredients:</strong> ${ingredients.join(", ") || "None"}</p>
+        <p><strong>Ingredients:</strong> ${selectedIngredients.join(", ") || "None"}</p>
         <p><strong>Sweetener:</strong> ${sweetener}</p>
         <p><strong>Total Price:</strong> $${finalPrice}</p>
-    `;
+    `;  
 });
 document.getElementById("resetBtn").addEventListener("click", () => {
 

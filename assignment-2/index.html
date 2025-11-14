@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>Smoothie Machine</title>
 </head>
 <body>
@@ -33,7 +35,13 @@
             <label><input type="checkbox" value="Strawberry"> Strawberry</label>
             <label><input type="checkbox" value="Mango"> Mango</label>
         </div>
-
+        <label>
+            Sweetener:
+            <select id="sweetener">
+                <option value="Honey">Honey</option>
+                <option value="Sugar">Sugar</option>
+                <option value="Stevia">Stevia</option>
+            </select>
         <button type="button" id="orderBtn">Order Smoothie</button>
 
         <button type="button" id="resetBtn" class="secondary-btn">Order Again</button>
