@@ -51,3 +51,6 @@ function displayDetails(car) {
     `;
 }
 displayDetails(eclipse);
+
+const images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+let currentIndex = 0;
