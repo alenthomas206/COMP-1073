@@ -54,3 +54,13 @@ displayDetails(eclipse);
 
 const images = ["img1.jpg", "img2.jpg", "img3.jpg"];
 let currentIndex = 0;
+
+document.getElementById("leftArrow").onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    carImage.src = images[currentIndex];
+};
+
+document.getElementById("rightArrow").onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    carImage.src = images[currentIndex];
+};
