@@ -21,3 +21,33 @@ function ToyCar(productName, brand, carBrand, carModel, scale, color, material, 
 
 
 }
+const eclipse = new ToyCar(
+  "Brian's Mitsubishi Eclipse Remix – Fast & Furious",
+  "Jada Toys",
+  "Mitsubishi",
+  "Eclipse Remix",
+  "1/24 Scale",
+  "Red",
+  "Diecast", "8in", "3.75in", "2.75in",
+  "Window Box", "36815-JADA-RED", "801310368152",
+  true, true, true, true,
+  true, "Black"
+);
+function displayDetails(car) {
+    document.getElementById("detailsBox").innerHTML = `
+        <b>Name:</b> ${car.productName}<br>
+        <b>Brand:</b> ${car.brand}<br>
+        <b>Car Brand:</b> ${car.carBrand}<br>
+        <b>Model:</b> ${car.carModel}<br>
+        <b>Scale:</b> ${car.scale}<br>
+        <b>Color:</b> ${car.color}<br>
+        <b>Material:</b> ${car.material}<br>
+        <b>Dimensions:</b> ${car.length} × ${car.width} × ${car.height}<br>
+        <b>Packaging:</b> ${car.packaging}<br>
+        <b>SKU:</b> ${car.sku}<br>
+        <b>UPC:</b> ${car.upc}<br>
+        <b>Spoiler:</b> ${car.hasSpoiler}<br>
+        <b>Spoiler Color:</b> ${car.spoilerColor}<br>
+    `;
+}
+displayDetails(eclipse);
