@@ -3,24 +3,31 @@ body {
     background: #f2f2f2;
     padding: 20px;
 }
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+}
+
 .car-container {
     display: flex;
     gap: 40px;
     justify-content: center;
     align-items: center;
 }
+
+.left {
+    position: relative;
+    width: 40%;
+}
+
 .car-image {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-#detailsBox {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    line-height: 1.6;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+
 .arrow {
     position: absolute;
     top: 45%;
@@ -35,3 +42,25 @@ body {
 
 #leftArrow { left: -30px; }
 #rightArrow { right: -30px; }
+
+.details {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    line-height: 1.6;
+}
+
+.spoilerButton {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #d40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.spoilerButton:hover {
+    background: #a60000;
+}
