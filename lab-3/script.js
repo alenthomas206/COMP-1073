@@ -12,4 +12,12 @@ function ToyCar(productName, brand, carBrand, carModel, scale, color, material, 
     this.packaging = packaging;
     this.sku = sku;
     this.upc = upc;
+    this.freewheeling = freewheeling;
+    this.openingDoors = openingDoors;
+    this.openingHood = openingHood;
+    this.openingTrunk = openingTrunk;
+    this.hasSpoiler = hasSpoiler;
+    this.spoilerColor = spoilerColor;
+
+
 }
