@@ -25,6 +25,21 @@
         "clover honey"
       ],
       "image" : "peach-mango.svg"
-    }
+    },
+    {
+    "name": "Strawberry Sprinkle Blast",
+    "calories": 280,
+    "type": "ice cream",
+    "ingredients": ["strawberry puree", "sprinkles", "sweet cream"],
+    "image": "strawberry-sprinkle.svg"
+  },
+  {
+    "name": "Galaxy Bubblegum Swirl",
+    "calories": 300,
+    "type": "gelato",
+    "ingredients": ["bubblegum syrup", "galaxy swirl", "milk"],
+    "image": "ice-cream-xtra1.svg"
+  }
+
   ]
 }

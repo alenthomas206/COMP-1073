@@ -37,7 +37,7 @@ function populateHeader(jsonObj) {
     header.appendChild(h1);
 };
 /* STEP 10b: Assemble the showTopFlavors() function */
-function showTopFlavors() {
+function showTopFlavors(jsonObj) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
     const topFlavors = jsonObj.topFlavors;
     //let topFlavors = jsonObj.topFlavors;
@@ -48,10 +48,28 @@ function showTopFlavors() {
         const h2 = document.createElement('h2');
         const img = document.createElement('img');
         const ul = document.createElement('ul');
+        const caloriesP = document.createElement('p');
+        const typeP = document.createElement('p');
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i].name;
         img.src = topFlavors[i].image;
+
+        caloriesP.textContent = `Calories: ${topFlavors[i].calories}`;
+        typeP.textContent = `Type: ${topFlavors[i].type}`;
+
+
+        if (topFlavors[i].calories > 350) {
+        caloriesP.style.color = "red";
+        caloriesP.style.fontWeight = "bold";
+        }
+
+        if (topFlavors[i].type === "ice cream") typeP.style.color = "blue";
+        if (topFlavors[i].type === "sorbet") typeP.style.color = "orange";
+        if (topFlavors[i].type === "gelato") typeP.style.color = "purple";
+
+        article.appendChild(caloriesP);
+        article.appendChild(typeP);
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
                 const ingredients = topFlavors[i].ingredients;
