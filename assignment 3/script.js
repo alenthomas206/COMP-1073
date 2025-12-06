@@ -23,3 +23,32 @@ async function searchVideos() {
         console.error("Error fetching data:", error);
     }
 }
+function displayResults(videos) {
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = ""; 
+    
+
+    if (!videos || videos.length === 0) {
+        resultsDiv.innerHTML = "<p>No videos found.</p>";
+        return;
+    }
+
+    videos.forEach(video => {
+        const card = document.createElement("div");
+        card.classList.add("video-card");
+
+        const thumbnail = video.snippet.thumbnails.medium.url;
+        const title = video.snippet.title;
+        const channel = video.snippet.channelTitle;
+        const published = new Date(video.snippet.publishTime).toLocaleDateString();
+
+        card.innerHTML = `
+            <img src="${thumbnail}" alt="Video Thumbnail">
+            <h3>${title}</h3>
+            <p><strong>Channel:</strong> ${channel}</p>
+            <p><strong>Published:</strong> ${published}</p>
+        `;
+
+        resultsDiv.appendChild(card);
+    });
+}
