@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YouTube video search">
+    <title>YouTube Video Search</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Search <span style="font-size:1.5em;">Search</span></h1>
+
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search videos..." aria-label="Search YouTube videos" />
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="results"></div>
+
+        <p class="small">
+            Powered by
+            <a href="https://developers.google.com/youtube/v3">
+                YouTube Data API v3
+            </a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
